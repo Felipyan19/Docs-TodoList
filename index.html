@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Home</title>
@@ -15,341 +16,382 @@
 
 <body>
 
-<div id="main">
+    <div id="main">
+        <section>
+            <article>
+                <h1>Todo List Web Application</h1>
+                <p>Welcome to our Todo List application! 📝 This project is your go-to solution for efficient task
+                    management, meticulously crafted for a streamlined daily routine.</p>
+                <h2>Features</h2>
+                <ul>
+                    <li>
+                        <p><strong>AddTodoModal:</strong> Quickly add tasks using a sleek modal for effortless task
+                            input.</p>
+                    </li>
+                    <li>
+                        <p><strong>MyCard:</strong> Visualize your tasks with style using the attractive card component,
+                            featuring priority indicators and delete functionality.</p>
+                    </li>
+                    <li>
+                        <p><strong>Description:</strong> Dive into task specifics with a detailed modal, presenting
+                            crucial information such as title, description, priority, and due date.</p>
+                    </li>
+                    <li>
+                        <p><strong>MyInput:</strong> Simplify task filtering and searching with a powerful input group
+                            featuring a dropdown, dynamically updating your task list.</p>
+                    </li>
+                    <li>
+                        <p><strong>MyNavbar:</strong> Navigate through the app seamlessly with an intuitive navbar,
+                            providing easy access to essential functionalities.</p>
+                    </li>
+                    <li>
+                        <p><strong>TodoListProvider:</strong> Effortlessly manage login status, user credentials, todos,
+                            and search terms with the TodoListProvider context.</p>
+                    </li>
+                    <li>
+                        <p><strong>AppRoutes:</strong> Define application routes based on user authentication status,
+                            ensuring a smooth user experience.</p>
+                    </li>
+                    <li>
+                        <p><strong>App:</strong> Initialize the application, manage user sessions, and render main
+                            routes for a user-friendly experience.</p>
+                    </li>
+                    <li>
+                        <p><strong>Home:</strong> Explore the home component, showcasing a comprehensive Todo list with
+                            features like add, complete, and delete.</p>
+                    </li>
+                    <li>
+                        <p><strong>Login:</strong> Securely log in to the application with a dedicated login component,
+                            ensuring a seamless and protected user authentication process.</p>
+                    </li>
+                    <li>
+                        <p><strong>NotFound:</strong> Encounter a gracefully designed 404 Not Found page with a message
+                            and a link to navigate back to the home page.</p>
+                    </li>
+                </ul>
+                <p>Experience the ease and elegance of organized task management. Let our Todo List be your trusted
+                    companion in staying on top of your daily agenda.</p>
+                <p>For detailed documentation, including function parameters and usage, refer to the <a
+                        href="https://docs-rg7swyfto-felipyan19.vercel.app/">JsDoc documentation</a>.</p>
+                <h2>Getting Started</h2>
+                <p>To start managing your tasks with our Todo List, follow these simple steps:</p>
+                <ol>
+                    <li>Clone the repository: <code>git clone https://github.com/your-username/todo-list.git</code></li>
+                    <li>Install dependencies: <code>npm install</code></li>
+                    <li>Run the application: <code>npm start</code></li>
+                </ol>
+                <p>Feel free to explore the codebase, delve into the components, and tailor the project to suit your
+                    task management needs.</p>
+                <p>Happy organizing! 🚀</p>
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#addtodomodal">AddTodoModal</a>
+                        <ul>
+                            <li><a href="#parameters">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#mycard">MyCard</a>
+                        <ul>
+                            <li><a href="#parameters-1">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#description">Description</a>
+                        <ul>
+                            <li><a href="#parameters-2">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#myinput">MyInput</a></li>
+                    <li><a href="#handlesearchchange">handleSearchChange</a>
+                        <ul>
+                            <li><a href="#parameters-3">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#handlesearch">handleSearch</a></li>
+                    <li><a href="#handledropdownchange">handleDropdownChange</a>
+                        <ul>
+                            <li><a href="#parameters-4">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#renderinputgroup">renderInputGroup</a></li>
+                    <li><a href="#mynavbar">MyNavbar</a></li>
+                    <li><a href="#todolistprovider">TodoListProvider</a>
+                        <ul>
+                            <li><a href="#parameters-5">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#approutes">AppRoutes</a></li>
+                    <li><a href="#app">App</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#handlesubmit">handleSubmit</a>
+                        <ul>
+                            <li><a href="#parameters-6">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#handlesubmit-1">handleSubmit</a>
+                        <ul>
+                            <li><a href="#parameters-7">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#ondelete">onDelete</a>
+                        <ul>
+                            <li><a href="#parameters-8">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#oncomplete">onComplete</a>
+                        <ul>
+                            <li><a href="#parameters-9">Parameters</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#toggleshowpassword">toggleShowPassword</a></li>
+                    <li><a href="#notfound">NotFound</a></li>
+                </ul>
+                <h2>AddTodoModal</h2>
+                <p>Renders a modal dialog for adding a new todo item.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li>
+                        <p><code>$0</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong>
+                        </p>
+                        <ul>
+                            <li><code>$0.showModal</code> </li>
+                            <li><code>$0.handleClose</code> </li>
+                            <li><code>$0.handleSubmit</code> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><code>showModal</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong>
+                            Controls the visibility of the modal</p>
+                    </li>
+                    <li>
+                        <p><code>handleClose</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong>
+                            Function to call on modal close</p>
+                    </li>
+                    <li>
+                        <p><code>handleSubmit</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong>
+                            Function to call on form submit</p>
+                    </li>
+                </ul>
+                <p>Returns <strong>JSX.Element</strong> A modal component with a form for adding a todo</p>
+                <h2>MyCard</h2>
+                <p>Renders a card component with task details, including priority
+                    indicators, completion status, and delete functionality.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>props</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong>
+                        Contains task details and event handlers.</li>
+                </ul>
+                <p>Returns <strong>ReactElement</strong> A card representing a single task.</p>
+                <h2>Description</h2>
+                <p>Renders a modal with a title, description, priority, and due date.
+                    It has a close button which hides the modal and a button to
+                    acknowledge the information presented. It also dynamically
+                    assigns a text color class based on the priority level.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li>
+                        <p><code>$0</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong>
+                        </p>
+                        <ul>
+                            <li><code>$0.props</code> </li>
+                            <li><code>$0.setShow</code> </li>
+                            <li><code>$0.show</code> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><code>props</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong>
+                            Contains title, description, priority,
+                            and dueDate.</p>
+                    </li>
+                    <li>
+                        <p><code>setShow</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong>
+                            Function to set the visibility of
+                            the modal.</p>
+                    </li>
+                    <li>
+                        <p><code>show</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong>
+                            Determines if the modal is visible.</p>
+                    </li>
+                </ul>
+                <p>Returns <strong>JSX.Element</strong> A modal component with dynamic content
+                    and styling.</p>
+                <h2>MyInput</h2>
+                <p><code>MyInput</code> is a functional React component that renders an input group
+                    with a dropdown allowing the user to search and filter todos by name,
+                    priority, or date. It uses context to manage and update the list of
+                    todos based on the search criteria.</p>
+                <p>Returns <strong>JSX.Element</strong> The search input group within a container and
+                    navbar for filtering todos.</p>
+                <h2>handleSearchChange</h2>
+                <p>Updates the search term state based on user input.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>event</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong>
+                        The input event triggering the
+                        change.</li>
+                </ul>
+                <p>Returns <strong>void</strong> </p>
+                <h2>handleSearch</h2>
+                <p>Triggers a search operation based on the search term. If the
+                    search term is different from the last term, it resets the
+                    last term and updates the search. It then filters the todos
+                    by the search term if it's not an empty string; otherwise,
+                    it resets to the original todos from localStorage.</p>
+                <p>There are no parameters or return values as this function
+                    relies on and manipulates state within its scope.</p>
+                <h2>handleDropdownChange</h2>
+                <p>Handles the change event on a dropdown, updating
+                    the title and resetting the search term.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>eventKey</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong>
+                        The key of the selected
+                        dropdown item.</li>
+                    <li><code>event</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong>
+                        The event object containing
+                        the target text.</li>
+                </ul>
+                <h2>renderInputGroup</h2>
+                <p>Renders an input group based on the dropdownTitle state.
+                    If the dropdownTitle is 'Nombre', a text search input is
+                    rendered. If it's 'Prioridad', a priority select drop-down
+                    is rendered. If it's 'Fecha', a date picker is rendered.</p>
+                <p>Returns <strong>JSX.Element</strong> The input group element for the
+                    corresponding dropdownTitle value.</p>
+                <h2>MyNavbar</h2>
+                <p>Represents the navigation bar in a Todo List application,
+                    using context for user state and providing a logout
+                    functionality.</p>
+                <h2>TodoListProvider</h2>
+                <p>Provides context for a TodoList including state for login
+                    status, login values, todo items, and search term. Wraps
+                    child components with TodoListContext.Provider.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li>
+                        <p><code>props</code> <strong><a
+                                    href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong>
+                            Contains children components.</p>
+                        <ul>
+                            <li><code>props.children</code> </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Returns <strong>JSX.Element</strong> A TodoListContext.Provider component
+                    wrapping children.</p>
+                <h2>AppRoutes</h2>
+                <p>Defines the routing structure for the application based on the
+                    authentication status from the TodoListContext.</p>
+                <p>Returns <strong>JSX.Element</strong> The routes to render, depending on login status.</p>
+                <h2>App</h2>
+                <p>Initializes the application, sets user session in local storage,
+                    and renders the main routes wrapped in the TodoListProvider and
+                    BrowserRouter.</p>
+                <p>Returns <strong>JSX.Element</strong> The root component of the application.</p>
+                <h2>Home</h2>
+                <p>Home component rendering a Todo list with add, complete,
+                    and delete functionality, along with local storage sync.</p>
+                <h2>handleSubmit</h2>
+                <p>Handles the submission of a form by preventing the
+                    default form submission, appending a 'completada'
+                    field to the form data, updating the context's todos
+                    state, and persisting the new todos to localStorage.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>event</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/API/Event">Event</a></strong> The submit
+                        event from the form.</li>
+                </ul>
+                <p>Returns <strong>void</strong> </p>
+                <h2>handleSubmit</h2>
+                <p>Handles the form submission event by preventing the default
+                    form submission, checking if the current session matches the
+                    context's valueinlogin, and navigating to the home page if
+                    the credentials are correct, otherwise alerts the user.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>event</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/API/Event">Event</a></strong> The event
+                        object from the form submit.</li>
+                </ul>
+                <h2>onDelete</h2>
+                <p>Deletes a todo item by its index from the list
+                    and updates local storage.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>index</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong>
+                        The index of the todo to delete.</li>
+                </ul>
+                <p>Returns <strong>void</strong> </p>
+                <h2>onComplete</h2>
+                <p>Toggles the completion status of a todo item by index,
+                    updates the todos in the context, and saves the new state
+                    to localStorage. It also triggers a toast notification.</p>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><code>index</code> <strong><a
+                                href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong>
+                        The index of the todo to toggle.</li>
+                </ul>
+                <h2>Login</h2>
+                <p>Renders the login component, provides UI for user
+                    authentication, and navigates to the home page upon
+                    successful login.</p>
+                <h2>toggleShowPassword</h2>
+                <p>Toggles the state of password visibility.</p>
+                <h2>NotFound</h2>
+                <p>Renders a 404 Not Found page component with a message
+                    and a link to the home page.</p>
+            </article>
+        </section>
 
-    <h1 class="page-title">Home</h1>
-
-    
-
-
-
-    
-
-
-    <h3> </h3>
 
 
 
 
 
+    </div>
 
+    <nav>
+        <h2><a href="index.html">Home</a></h2>
+        <h3>Global</h3>
+        <ul>
+            <li><a href="global.html#AddTodoModal">AddTodoModal</a></li>
+            <li><a href="global.html#App">App</a></li>
+            <li><a href="global.html#AppRoutes">AppRoutes</a></li>
+            <li><a href="global.html#Description">Description</a></li>
+            <li><a href="global.html#Home">Home</a></li>
+            <li><a href="global.html#Login">Login</a></li>
+            <li><a href="global.html#MyCard">MyCard</a></li>
+            <li><a href="global.html#MyInput">MyInput</a></li>
+            <li><a href="global.html#MyNavbar">MyNavbar</a></li>
+            <li><a href="global.html#NotFound">NotFound</a></li>
+            <li><a href="global.html#TodoListProvider">TodoListProvider</a></li>
+        </ul>
+    </nav>
 
+    <br class="clear">
 
+    <footer>
+        Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Dec 14 2023 11:21:06
+        GMT-0500 (hora estándar de Colombia)
+    </footer>
 
-
-    
-
-
-
-
-    <section>
-        <article><h1>Todo List Web Application</h1>
-<p>Welcome to our Todo List application! 📝 This project is your go-to solution for efficient task management, meticulously crafted for a streamlined daily routine.</p>
-<h2>Features</h2>
-<ul>
-<li>
-<p><strong>AddTodoModal:</strong> Quickly add tasks using a sleek modal for effortless task input.</p>
-</li>
-<li>
-<p><strong>MyCard:</strong> Visualize your tasks with style using the attractive card component, featuring priority indicators and delete functionality.</p>
-</li>
-<li>
-<p><strong>Description:</strong> Dive into task specifics with a detailed modal, presenting crucial information such as title, description, priority, and due date.</p>
-</li>
-<li>
-<p><strong>MyInput:</strong> Simplify task filtering and searching with a powerful input group featuring a dropdown, dynamically updating your task list.</p>
-</li>
-<li>
-<p><strong>MyNavbar:</strong> Navigate through the app seamlessly with an intuitive navbar, providing easy access to essential functionalities.</p>
-</li>
-<li>
-<p><strong>TodoListProvider:</strong> Effortlessly manage login status, user credentials, todos, and search terms with the TodoListProvider context.</p>
-</li>
-<li>
-<p><strong>AppRoutes:</strong> Define application routes based on user authentication status, ensuring a smooth user experience.</p>
-</li>
-<li>
-<p><strong>App:</strong> Initialize the application, manage user sessions, and render main routes for a user-friendly experience.</p>
-</li>
-<li>
-<p><strong>Home:</strong> Explore the home component, showcasing a comprehensive Todo list with features like add, complete, and delete.</p>
-</li>
-<li>
-<p><strong>Login:</strong> Securely log in to the application with a dedicated login component, ensuring a seamless and protected user authentication process.</p>
-</li>
-<li>
-<p><strong>NotFound:</strong> Encounter a gracefully designed 404 Not Found page with a message and a link to navigate back to the home page.</p>
-</li>
-</ul>
-<p>Experience the ease and elegance of organized task management. Let our Todo List be your trusted companion in staying on top of your daily agenda.</p>
-<p>For detailed documentation, including function parameters and usage, refer to the <a href="https://docs-rg7swyfto-felipyan19.vercel.app/">JsDoc documentation</a>.</p>
-<h2>Getting Started</h2>
-<p>To start managing your tasks with our Todo List, follow these simple steps:</p>
-<ol>
-<li>Clone the repository: <code>git clone https://github.com/your-username/todo-list.git</code></li>
-<li>Install dependencies: <code>npm install</code></li>
-<li>Run the application: <code>npm start</code></li>
-</ol>
-<p>Feel free to explore the codebase, delve into the components, and tailor the project to suit your task management needs.</p>
-<p>Happy organizing! 🚀</p>
-<h3>Table of Contents</h3>
-<ul>
-<li><a href="#addtodomodal">AddTodoModal</a>
-<ul>
-<li><a href="#parameters">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#mycard">MyCard</a>
-<ul>
-<li><a href="#parameters-1">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#description">Description</a>
-<ul>
-<li><a href="#parameters-2">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#myinput">MyInput</a></li>
-<li><a href="#handlesearchchange">handleSearchChange</a>
-<ul>
-<li><a href="#parameters-3">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#handlesearch">handleSearch</a></li>
-<li><a href="#handledropdownchange">handleDropdownChange</a>
-<ul>
-<li><a href="#parameters-4">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#renderinputgroup">renderInputGroup</a></li>
-<li><a href="#mynavbar">MyNavbar</a></li>
-<li><a href="#todolistprovider">TodoListProvider</a>
-<ul>
-<li><a href="#parameters-5">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#approutes">AppRoutes</a></li>
-<li><a href="#app">App</a></li>
-<li><a href="#home">Home</a></li>
-<li><a href="#handlesubmit">handleSubmit</a>
-<ul>
-<li><a href="#parameters-6">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#handlesubmit-1">handleSubmit</a>
-<ul>
-<li><a href="#parameters-7">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#ondelete">onDelete</a>
-<ul>
-<li><a href="#parameters-8">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#oncomplete">onComplete</a>
-<ul>
-<li><a href="#parameters-9">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#login">Login</a></li>
-<li><a href="#toggleshowpassword">toggleShowPassword</a></li>
-<li><a href="#notfound">NotFound</a></li>
-</ul>
-<h2>AddTodoModal</h2>
-<p>Renders a modal dialog for adding a new todo item.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p><code>$0</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> </p>
-<ul>
-<li><code>$0.showModal</code>  </li>
-<li><code>$0.handleClose</code>  </li>
-<li><code>$0.handleSubmit</code>  </li>
-</ul>
-</li>
-<li>
-<p><code>showModal</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> Controls the visibility of the modal</p>
-</li>
-<li>
-<p><code>handleClose</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong> Function to call on modal close</p>
-</li>
-<li>
-<p><code>handleSubmit</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong> Function to call on form submit</p>
-</li>
-</ul>
-<p>Returns <strong>JSX.Element</strong> A modal component with a form for adding a todo</p>
-<h2>MyCard</h2>
-<p>Renders a card component with task details, including priority
-indicators, completion status, and delete functionality.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>props</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> Contains task details and event handlers.</li>
-</ul>
-<p>Returns <strong>ReactElement</strong> A card representing a single task.</p>
-<h2>Description</h2>
-<p>Renders a modal with a title, description, priority, and due date.
-It has a close button which hides the modal and a button to
-acknowledge the information presented. It also dynamically
-assigns a text color class based on the priority level.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p><code>$0</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> </p>
-<ul>
-<li><code>$0.props</code>  </li>
-<li><code>$0.setShow</code>  </li>
-<li><code>$0.show</code>  </li>
-</ul>
-</li>
-<li>
-<p><code>props</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> Contains title, description, priority,
-and dueDate.</p>
-</li>
-<li>
-<p><code>setShow</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></strong> Function to set the visibility of
-the modal.</p>
-</li>
-<li>
-<p><code>show</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> Determines if the modal is visible.</p>
-</li>
-</ul>
-<p>Returns <strong>JSX.Element</strong> A modal component with dynamic content
-and styling.</p>
-<h2>MyInput</h2>
-<p><code>MyInput</code> is a functional React component that renders an input group
-with a dropdown allowing the user to search and filter todos by name,
-priority, or date. It uses context to manage and update the list of
-todos based on the search criteria.</p>
-<p>Returns <strong>JSX.Element</strong> The search input group within a container and
-navbar for filtering todos.</p>
-<h2>handleSearchChange</h2>
-<p>Updates the search term state based on user input.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>event</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> The input event triggering the
-change.</li>
-</ul>
-<p>Returns <strong>void</strong> </p>
-<h2>handleSearch</h2>
-<p>Triggers a search operation based on the search term. If the
-search term is different from the last term, it resets the
-last term and updates the search. It then filters the todos
-by the search term if it's not an empty string; otherwise,
-it resets to the original todos from localStorage.</p>
-<p>There are no parameters or return values as this function
-relies on and manipulates state within its scope.</p>
-<h2>handleDropdownChange</h2>
-<p>Handles the change event on a dropdown, updating
-the title and resetting the search term.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>eventKey</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The key of the selected
-dropdown item.</li>
-<li><code>event</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> The event object containing
-the target text.</li>
-</ul>
-<h2>renderInputGroup</h2>
-<p>Renders an input group based on the dropdownTitle state.
-If the dropdownTitle is 'Nombre', a text search input is
-rendered. If it's 'Prioridad', a priority select drop-down
-is rendered. If it's 'Fecha', a date picker is rendered.</p>
-<p>Returns <strong>JSX.Element</strong> The input group element for the
-corresponding dropdownTitle value.</p>
-<h2>MyNavbar</h2>
-<p>Represents the navigation bar in a Todo List application,
-using context for user state and providing a logout
-functionality.</p>
-<h2>TodoListProvider</h2>
-<p>Provides context for a TodoList including state for login
-status, login values, todo items, and search term. Wraps
-child components with TodoListContext.Provider.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p><code>props</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> Contains children components.</p>
-<ul>
-<li><code>props.children</code>  </li>
-</ul>
-</li>
-</ul>
-<p>Returns <strong>JSX.Element</strong> A TodoListContext.Provider component
-wrapping children.</p>
-<h2>AppRoutes</h2>
-<p>Defines the routing structure for the application based on the
-authentication status from the TodoListContext.</p>
-<p>Returns <strong>JSX.Element</strong> The routes to render, depending on login status.</p>
-<h2>App</h2>
-<p>Initializes the application, sets user session in local storage,
-and renders the main routes wrapped in the TodoListProvider and
-BrowserRouter.</p>
-<p>Returns <strong>JSX.Element</strong> The root component of the application.</p>
-<h2>Home</h2>
-<p>Home component rendering a Todo list with add, complete,
-and delete functionality, along with local storage sync.</p>
-<h2>handleSubmit</h2>
-<p>Handles the submission of a form by preventing the
-default form submission, appending a 'completada'
-field to the form data, updating the context's todos
-state, and persisting the new todos to localStorage.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>event</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/Event">Event</a></strong> The submit event from the form.</li>
-</ul>
-<p>Returns <strong>void</strong> </p>
-<h2>handleSubmit</h2>
-<p>Handles the form submission event by preventing the default
-form submission, checking if the current session matches the
-context's valueinlogin, and navigating to the home page if
-the credentials are correct, otherwise alerts the user.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>event</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/Event">Event</a></strong> The event object from the form submit.</li>
-</ul>
-<h2>onDelete</h2>
-<p>Deletes a todo item by its index from the list
-and updates local storage.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>index</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> The index of the todo to delete.</li>
-</ul>
-<p>Returns <strong>void</strong> </p>
-<h2>onComplete</h2>
-<p>Toggles the completion status of a todo item by index,
-updates the todos in the context, and saves the new state
-to localStorage. It also triggers a toast notification.</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>index</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> The index of the todo to toggle.</li>
-</ul>
-<h2>Login</h2>
-<p>Renders the login component, provides UI for user
-authentication, and navigates to the home page upon
-successful login.</p>
-<h2>toggleShowPassword</h2>
-<p>Toggles the state of password visibility.</p>
-<h2>NotFound</h2>
-<p>Renders a 404 Not Found page component with a message
-and a link to the home page.</p></article>
-    </section>
-
-
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AddTodoModal">AddTodoModal</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#MyCard">MyCard</a></li><li><a href="global.html#MyInput">MyInput</a></li><li><a href="global.html#MyNavbar">MyNavbar</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#TodoListProvider">TodoListProvider</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Dec 14 2023 11:21:06 GMT-0500 (hora estándar de Colombia)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+    <script> prettyPrint(); </script>
+    <script src="scripts/linenumber.js"> </script>
 </body>
+
 </html>
