@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Components/MyInput/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Components/MyInput/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useContext } from 'react';
+import { Navbar, NavDropdown, InputGroup, FormControl, Button, Container, Form } from 'react-bootstrap';
+import { IoSearch } from "react-icons/io5";
+import { TodoListContext } from '../../Context';
+
+/**
+ * `MyInput` is a functional React component that renders an input group
+ * with a dropdown allowing the user to search and filter todos by name,
+ * priority, or date. It uses context to manage and update the list of
+ * todos based on the search criteria.
+ *
+ * @return {JSX.Element} The search input group within a container and
+ * navbar for filtering todos.
+ */
+const MyInput = () => {
+    const context = useContext(TodoListContext);
+    const { setSearch, todos } = context;
+    const [searchTerm, setSearchTerm] = useState('');
+    const [dropdownTitle, setDropdownTitle] = useState('Nombre');
+    const [lastTerm, setLastTerm] = useState('');
+
+    /**
+     * Updates the search term state based on user input.
+     *
+     * @param {object} event - The input event triggering the
+     *                         change.
+     * @return {void}
+     */
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    /**
+     * Triggers a search operation based on the search term. If the 
+     * search term is different from the last term, it resets the 
+     * last term and updates the search. It then filters the todos 
+     * by the search term if it's not an empty string; otherwise, 
+     * it resets to the original todos from localStorage.
+     *
+     * There are no parameters or return values as this function 
+     * relies on and manipulates state within its scope.
+     */
+    const handleSearch = () => {
+        if (searchTerm !== lastTerm) {
+            context.setTodos(JSON.parse(localStorage.getItem('todos')));
+            setLastTerm('');
+            setSearch(searchTerm);
+        }
+
+        if (searchTerm === '') {
+            context.setTodos(JSON.parse(localStorage.getItem('todos')));
+        } else {
+            context.setTodos(todos.filter((todo) => todo[dropdownTitle].includes(searchTerm)));
+        }
+    };
+
+    /**
+     * Handles the change event on a dropdown, updating
+     * the title and resetting the search term.
+     *
+     * @param {string} eventKey - The key of the selected
+     *                          dropdown item.
+     * @param {Object} event - The event object containing
+     *                       the target text.
+     */
+    const handleDropdownChange = (eventKey, event) => {
+        setDropdownTitle(event.target.text);
+        setSearchTerm('');
+    };
+
+    /**
+     * Renders an input group based on the dropdownTitle state. 
+     * If the dropdownTitle is 'Nombre', a text search input is 
+     * rendered. If it's 'Prioridad', a priority select drop-down 
+     * is rendered. If it's 'Fecha', a date picker is rendered.
+     *
+     * @return {JSX.Element} The input group element for the 
+     *                       corresponding dropdownTitle value.
+     */
+    const renderInputGroup = () => {
+        if (dropdownTitle === 'Nombre') {
+            return (
+                &lt;InputGroup className="mx-3 my-2">
+                    &lt;FormControl
+                        type="search"
+                        placeholder="Buscar..."
+                        aria-label="Buscar"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                    />
+                    &lt;Button variant="outline-secondary" onClick={handleSearch}>
+                        &lt;IoSearch />
+                    &lt;/Button>
+                &lt;/InputGroup>
+            );
+        } else if (dropdownTitle === 'Prioridad') {
+            return (
+                &lt;InputGroup className="mx-3 my-2">
+                    &lt;Form.Select aria-label="Prioridad" value={searchTerm} onChange={handleSearchChange}>
+                        &lt;option value="">Selecciona Prioridad&lt;/option>
+                        &lt;option value="Alta">Alta&lt;/option>
+                        &lt;option value="Media">Media&lt;/option>
+                        &lt;option value="Baja">Baja&lt;/option>
+                    &lt;/Form.Select>
+                    &lt;Button variant="outline-secondary" onClick={handleSearch}>
+                        &lt;IoSearch />
+                    &lt;/Button>
+                &lt;/InputGroup>
+            );
+        } else if (dropdownTitle === 'Fecha') {
+            return (
+                &lt;InputGroup className="mx-3 my-2">
+                    &lt;FormControl
+                        type="date"
+                        aria-label="Fecha"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                    />
+                    &lt;Button variant="outline-secondary" onClick={handleSearch}>
+                        &lt;IoSearch />
+                    &lt;/Button>
+                &lt;/InputGroup>
+            );
+        }
+    };
+
+    return (
+        &lt;Container>
+            &lt;Navbar className="my-3">
+                {renderInputGroup()}
+
+                &lt;NavDropdown
+                    title={dropdownTitle}
+                    id="basic-nav-dropdown"
+                    className="mx-3 my-2"
+                    onSelect={handleDropdownChange}
+                >
+                    &lt;NavDropdown.Item eventKey="1">Nombre&lt;/NavDropdown.Item>
+                    &lt;NavDropdown.Item eventKey="2">Prioridad&lt;/NavDropdown.Item>
+                    &lt;NavDropdown.Item eventKey="3">Fecha&lt;/NavDropdown.Item>
+                &lt;/NavDropdown>
+            &lt;/Navbar>
+        &lt;/Container>
+    );
+};
+
+export { MyInput };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AddTodoModal">AddTodoModal</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#MyCard">MyCard</a></li><li><a href="global.html#MyInput">MyInput</a></li><li><a href="global.html#MyNavbar">MyNavbar</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#TodoListProvider">TodoListProvider</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Dec 14 2023 11:21:06 GMT-0500 (hora estándar de Colombia)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
